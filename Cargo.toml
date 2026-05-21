@@ -29,9 +29,9 @@ http1 = { version = "1", optional = true, package = "http" }
 http0_2 = { version = "0.2", optional = true, package = "http" }
 js-sys = "0.3"
 lazy_static = "1"
-leptos = "0.8"
-leptos_axum = { version = "0.8", default-features = false, optional = true }
-leptos_actix = { version = "0.8", default-features = false, optional = true }
+leptos = "0.9.0-alpha"
+leptos_axum = { version = "0.9.0-alpha", default-features = false, optional = true }
+leptos_actix = { version = "0.9.0-alpha", default-features = false, optional = true }
 num = { version = "0.4", optional = true }
 paste = "1"
 send_wrapper = "0.6"
@@ -40,7 +40,7 @@ unic-langid = { version = "0.9", optional = true }
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
 web-sys = { version = "^0.3.89", optional = true }
-reactive_stores = { version = "0.4.2", optional = true }
+reactive_stores = { version = "0.5.0-alpha", optional = true }
 
 [dev-dependencies]
 codee = { version = "0.3", features = [
@@ -51,7 +51,7 @@ codee = { version = "0.3", features = [
 ] }
 getrandom = { version = "0.4", features = ["wasm_js"] }
 gloo-timers = { version = "0.4", features = ["futures"] }
-leptos_meta = "0.8"
+leptos_meta = "0.9.0-alpha"
 rand = "0.10"
 serde = { version = "1", features = ["derive"] }
 unic-langid = { version = "0.9", features = ["macros"] }
@@ -386,3 +386,10 @@ watch_throttled = ["watch_with_options"]
 watch_with_options = []
 whenever = []
 reactive_stores = ["dep:reactive_stores"]
+
+[patch.crates-io]
+leptos = { git = "https://github.com/leptos-rs/leptos", branch = "leptos_0.9" }
+leptos_meta = { git = "https://github.com/leptos-rs/leptos", branch = "leptos_0.9" }
+leptos_axum = { git = "https://github.com/leptos-rs/leptos", branch = "leptos_0.9" }
+reactive_stores = { git = "https://github.com/leptos-rs/leptos", branch = "leptos_0.9" }
+reactive_graph = { git = "https://github.com/leptos-rs/leptos", branch = "leptos_0.9" }

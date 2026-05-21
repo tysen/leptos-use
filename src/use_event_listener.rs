@@ -104,6 +104,7 @@ where
     Ev: EventDescriptor + 'static,
     El: IntoElementMaybeSignal<web_sys::EventTarget, M>,
     F: FnMut(<Ev as EventDescriptor>::EventType) + 'static,
+    <Ev as EventDescriptor>::EventType: wasm_bindgen::convert::FromWasmAbi,
 {
     use_event_listener_with_options(target, event, handler, UseEventListenerOptions::default())
 }
@@ -121,6 +122,7 @@ where
     Ev: EventDescriptor + 'static,
     El: IntoElementMaybeSignal<web_sys::EventTarget, M>,
     F: FnMut(<Ev as EventDescriptor>::EventType) + 'static,
+    <Ev as EventDescriptor>::EventType: wasm_bindgen::convert::FromWasmAbi,
 {
     #[cfg(feature = "ssr")]
     {
