@@ -103,7 +103,7 @@ where
         let lock_promise = window()
             .navigator()
             .locks()
-            .request_with_options_and_callback(
+            .request_with_options(
                 name,
                 &options.to_web_sys(),
                 handler.unchecked_ref(),
